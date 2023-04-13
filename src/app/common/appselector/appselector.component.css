@@ -1,0 +1,118 @@
+body {
+    background: #666666;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .icon-cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 850px;
+    margin: 20% auto;
+    
+  }
+  
+  .icon {
+    display: flex;
+    align-items: center;
+    width: 128px;
+    height: 128px;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 2px 0px rgba(255,255,255,0.4) inset, 0 -2px 0px rgba(0,0,0,0.5) inset;
+    border-radius: 20px;
+    transition: 0.2s ease-in-out;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  .icon:after {
+    display: block;
+    z-index: 1;
+    width: 128px;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    font-family: FontAwesome;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .icon:hover {
+    transform: translate(0,-0.5em);
+  }
+  
+  .calling {
+    background: linear-gradient(rgb(72, 216, 97), rgb(2, 161, 32));
+  }
+  
+  .calling:after {
+    content: "Facility portal";
+  }
+  
+  .texting {
+    background: linear-gradient(rgb(0, 183, 255), rgb(0, 111, 245));
+  }
+  
+  .texting:after {
+    content: 'Admin portal';
+    margin-bottom: 10px;
+    margin-left: 3px;
+  }
+  
+  .gaming {
+    background: linear-gradient(rgb(254, 58, 47), rgb(221, 6, 4));
+  }
+  
+  .gaming:after {
+    content: 'Physician portal';
+    margin-bottom: 15px;
+  }
+  
+  .shopping {
+    background: linear-gradient(rgb(255, 202, 0), rgb(235, 121, 0));
+  }
+  
+  .shopping:after {
+    content: 'Hybrid portal';
+    margin-bottom: 5px;
+    margin-left: -4px;
+  }
+  
+  .settings {
+    background: linear-gradient(rgb(255, 35, 115), rgb(225, 12, 53));
+  }
+  
+  .settings:after {
+    content: '\f013';
+    margin-bottom: 5px;
+  }
+  
+  .map {
+    background: linear-gradient(rgb(78, 240, 252), rgb(49, 153, 200));
+  }
+  
+  .map:after {
+    content: '\f279';
+    font-size: 4.2em;
+    margin-bottom: 5px;
+  }
+  
+  .date {
+    background: linear-gradient(rgb(255, 155, 14), rgb(215, 66, 0));
+  }
+  
+  .date:after {
+    content: '\f073';
+    margin-bottom: 5px;
+    font-size: 4.5em;
+  }
+  
+  .download {
+    background: linear-gradient(rgb(139, 139, 139), rgb(80, 80, 80));
+  }
+  
+  .download:after {
+    content: '\f019';
+    font-size: 4.5em;
+  }

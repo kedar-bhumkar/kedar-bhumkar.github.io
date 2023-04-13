@@ -1,0 +1,15 @@
+<div class="icon-cont">
+  <a routerLink="/facilityhome"  *ngIf="payload?.obj?.includes('facility')">
+    <div class="icon calling"></div>
+  </a>
+  <a routerLink="/facilityhome" *ngIf="payload?.obj?.includes('admin')">
+    <div class="icon texting"></div>
+  </a>
+  <a routerLink="/facilityhome" *ngIf="payload?.obj?.includes('physician')">
+    <div class="icon gaming"></div>
+  </a>
+  <a routerLink="/facilityhome" *ngIf="payload?.obj?.includes('hybrid')">
+    <div class="icon shopping"></div>
+  </a>
+ 
+</div>

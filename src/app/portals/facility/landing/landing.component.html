@@ -1,0 +1,17 @@
+
+  <div class ="main">
+      <div class ="main_comp" *ngIf="payload?.obj?.componentData?.includes('app-contracts')">
+        <app-contracts />
+      </div>
+      <div class ="main_comp" *ngIf="payload?.obj?.componentData?.includes('app-reports')">
+        <app-reports />
+      </div>
+      <div class ="main_comp" *ngIf="payload?.obj?.componentData?.includes('app-education')">
+        <app-education />
+      </div>
+      <div class ="main_comp" *ngIf="payload?.obj?.componentData?.includes('app-chatbot')">
+        <app-chatbot />
+      </div>
+  </div>
+
+  

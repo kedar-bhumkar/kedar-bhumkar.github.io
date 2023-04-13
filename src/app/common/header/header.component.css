@@ -1,0 +1,26 @@
+
+#header-contents{
+    margin:10px;
+    position:fixed;
+    left:55%;
+    width:50%; 
+  
+  }
+  
+  #header-logo  img {
+    width:265px;
+    height: 65px;
+  }
+  
+  .label{
+    color: darkorange;
+  }
+  .label::after {content:":"}
+  
+  #header-contents span:nth-child(even) {
+    padding-right: 40px;
+  }
+  #header-contents span:nth-child(odd) {
+    font-weight: bolder;
+    padding-right: 15px;
+  }
