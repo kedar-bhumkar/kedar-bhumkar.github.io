@@ -1,0 +1,39 @@
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px 24px;
+  background-color: #ddd;
+  border-right: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  text-align: center;
+}
+
+.tab.active {
+  background-color: #ccc;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.table th {
+  background-color: #f1f1f1;
+}
+

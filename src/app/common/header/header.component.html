@@ -1,12 +1,32 @@
-
 <a routerLink="/facilityhome">
-    <div id="header-logo">
-        <img src="/assets/Facilityportal-2.png" class="logo svelte" alt="Svelte Logo" />
-    </div>
-  </a>
+  <div id="header-logo" *ngIf="url?.includes('png')">
+    <img src="{{ url }}" class="logo svelte" />
+  </div>
+
+</a>
+<div>
+<a href="https://persistentsystemsltd93-dev-ed.develop.my.salesforce.com" target="_blank">
+           <img src="/assets/salesforce.png" class="sf-logo" title="SSO to facility portal"/>
+</a>
+
+
 <!-- @ToDo  Fix content does not wrap -->
-<div id="header-contents" *ngIf="payload?.obj?.userData?.role">   
-    <span class="label">Name</span><span class="value">{{payload.obj.userData.username}}</span>   
-    <span class="label">Role</span><span class="value">{{payload.obj.userData.role}}</span>   
-    <span class="label">Facility</span><span class="value">{{payload.obj.userData.facility}}</span>   
+<div id="header-contents" *ngIf="payload?.name">
+  
+
+  <span class="label">Name</span
+  ><span class="value">{{ payload.name }}</span>
+  <span class="label">Role</span
+  ><span class="value">{{payload.roles[0].roleId}}</span>
+  <span class="label">Facility</span
+  ><span class="value">{{payload.roles[0].facilityName}}</span>
+  <span>
+    <button
+      class="button-three"
+      *ngIf="isAuthenticated"
+      (click)="oktaAuth.logout()"
+    >
+      LOGOUT
+    </button>
+  </span>
 </div>

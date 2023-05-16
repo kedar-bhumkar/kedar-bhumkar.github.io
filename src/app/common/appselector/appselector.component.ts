@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OktaAuthService } from 'src/app/app.service';
 import { DCCService } from '../../services/dcc.service';
 
 @Component({
@@ -8,18 +9,46 @@ import { DCCService } from '../../services/dcc.service';
 })
 export class AppselectorComponent {
   payload: any;
-  constructor(private dccService: DCCService) {}
+  payload2: any;
+  token:any;
+  url:any;
+
+  constructor(private dccService: DCCService,public oktaAuth: OktaAuthService) {}
 
   ngOnInit(): void {
-    this.getAppSelectorData();
+    
+    this.getToken();
   }
 
-  getAppSelectorData(): void {
+  async getToken() {
+    this.token = await this.oktaAuth.getToken();
+    console.log(' this.token - ' + JSON.stringify( this.token));
+    console.log(' this.federationID - ' + this.token.federationId);
+    //this.getAppSelectorData(this.token.federationId);
+    this.getLandingPageData(this.token.federationId);
+  }
+
+  getAppSelectorData(id:any): void {
     this.dccService
-      .getAppSelectorData()
+      .getAppSelectorData(id)
       .subscribe((payload) => {
         console.log('appselector data ' + JSON.stringify(payload));
         this.payload = payload;
       });
+  }
+
+  getLandingPageData(id:any): void {
+    this.dccService.getLandingPageData(id, 'APP').subscribe((payload) => {
+      console.log('getLandingPageData data ' + JSON.stringify(payload));
+      //this.payload2 = payload;
+      this.payload = payload;
+      //this.url = '/assets/Facilityportal-2.png';
+    });
+  }
+
+  isVisible(cmp:String):boolean {
+    //console.log('cmp = ' + cmp)
+    
+    return this.payload?.resource.length> 0 && this.payload.resource.find((res:any) =>res.name === cmp)
   }
 }

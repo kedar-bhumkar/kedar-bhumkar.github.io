@@ -1,6 +1,12 @@
+<app-banner ></app-banner>
+
+
 <div class="login">
-	<h5>Login Form</h5>
-	<input type="text" name="usern" placeholder="Username" value="" class="text">
-	<input type="Password" name="usern" placeholder="Password" value="" class="text">
-	<input type="button" name="usern" value="Login" class="btn" [routerLink]="['/apps']">
+	<h5>Digital portal login</h5>
+	<!--input type="text" name="usern" placeholder="Username" value="" class="text">
+	<input type="Password" name="usern" placeholder="Password" value="" class="text"-->
+	<span style="align-text:center;padding-left:40px;">You will be redirected to OHID SSO</span>
+	<input type="button" name="usern" value="Login" class="button-three" *ngIf="!isAuthenticated" (click)="oktaAuth.login('/apps')">
+	<input type="button" name="usern1" value="Logout" class="button-three"  *ngIf="isAuthenticated" (click)="oktaAuth.logout()">
+
 </div>

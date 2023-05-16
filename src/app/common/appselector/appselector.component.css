@@ -10,7 +10,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     width: 850px;
-    margin: 20% auto;
+    margin: 10% auto;
     
   }
   
@@ -116,3 +116,5 @@ body {
     content: '\f019';
     font-size: 4.5em;
   }
+
+ 

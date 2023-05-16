@@ -1,0 +1,87 @@
+.example-tab-icon {
+    margin-right: 8px;
+  }
+  
+
+
+/deep/ .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+    color: rgb(8, 107, 51) !important;
+}
+
+/deep/ .mat-mdc-tab .mdc-tab__text-label, .mat-mdc-tab-link .mdc-tab__text-label {
+    color: rgb(113 111 111 / 60%) !important;
+}
+
+table {
+    width: 100%;
+  }
+  
+/deep/ mat-tab-group {
+    padding:50px;
+}
+
+/deep/ .mat-mdc-table {
+    background: #ffffff;
+}
+
+/deep/ .mdc-data-table__cell {
+    color: rgb(18 17 17 / 87%);
+}
+
+/deep/ .mdc-data-table__header-cell {
+    color: rgb(17 105 229 / 87%);
+}
+
+/deep/ .mdc-button {
+    background-color: rgb(20, 31, 107) !important;
+}
+
+.example-panel-red.mat-mdc-select-panel {
+    background: rgba(255, 0, 0, 0.5);
+  }
+  
+  .example-panel-green.mat-mdc-select-panel {
+    background: rgba(0, 255, 0, 0.5);
+  }
+  
+  .example-panel-blue.mat-mdc-select-panel {
+    background: rgba(0, 0, 255, 0.5);
+  }
+  
+  .mat-mdc-form-field {
+
+    padding-top: 40px !important;
+    display: block !important;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .description {
+    flex: 1;
+  }
+  
+  p {
+  
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  
+  a {
+    color: blue;
+    text-decoration: none;
+  }
+
+  div{
+    text-align: left !important;
+    
+  }

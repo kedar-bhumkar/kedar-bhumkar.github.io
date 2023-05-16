@@ -1,16 +1,8 @@
-<!--div class="container" >
-  <div class="header">
-    <div><app-header [payload]="payload"/></div>
-  </div-->
 
-  
-  <!--div class="mainContent"-->
-    <router-outlet></router-outlet>
-  <!--/div-->
 
-  <!--div id="footer">
-    <app-footer />
-  </div-->
- 
+<!--button routerLink="/"> Home </button>
+<button *ngIf="!isAuthenticated" (click)="oktaAuth.login('/')"> Login </button>
+<button *ngIf="isAuthenticated" (click)="oktaAuth.logout()"> Logout </button>
+<button routerLink="/protected"> Protected </button-->
 
-<!--/div-->
+<router-outlet></router-outlet>

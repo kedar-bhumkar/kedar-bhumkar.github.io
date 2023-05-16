@@ -1,0 +1,73 @@
+<mat-tab-group (selectedTabChange)="onTabClick($event)">
+  <mat-tab label="facilitybinder">
+    <ng-template mat-tab-label>
+      <mat-icon class="supervisor_account">supervisor_account</mat-icon>
+      Facility binder
+    </ng-template>
+
+    <!--ngx-extended-pdf-viewer [src]="pdfUrl" height="500px"></ngx-extended-pdf-viewer-->
+    <iframe [src]="pdfUrl"  width="100%" height="500px" toolbar="1"></iframe>
+
+    <!-- Copyright 2023 Google LLC. All Rights Reserved.
+          Use of this source code is governed by an MIT-style license that
+          can be found in the LICENSE file at https://angular.io/license -->
+  </mat-tab>
+
+  <mat-tab label="optum101">
+    <ng-template mat-tab-label>
+      <mat-icon class="assessment">assessment</mat-icon>
+      Optum 101
+    </ng-template>
+    <div *ngFor="let doc of payload?.metadata">
+      <div class="image-container">
+        <img src="/assets/pdf.png" alt="Image Description" />
+
+        <div class="description">
+          <p>
+           {{doc.docDescription}}
+          </p>
+
+          <a href="{{ doc.docType }}">{{ doc.docName }}</a>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="onepager">
+    <ng-template mat-tab-label>
+      <mat-icon class="security">security</mat-icon>
+      One pager
+    </ng-template>
+    <div *ngFor="let doc of payload?.metadata">
+      <div class="image-container">
+        <img src="/assets/pdf.png" alt="Image Description" />
+
+        <div class="description">
+          <p>
+            {{doc.docDescription}}
+          </p>
+
+          <a href="{{ doc.docType }}">{{ doc.docName }}</a>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="security">security</mat-icon>
+      White papers
+    </ng-template>
+
+    Content 4
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="security">security</mat-icon>
+      Miscellaneous
+    </ng-template>
+
+    Content 5
+  </mat-tab>
+</mat-tab-group>

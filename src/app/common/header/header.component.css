@@ -11,6 +11,11 @@
     width:265px;
     height: 65px;
   }
+
+  .sf-logo {
+    width:65px;
+    height: 65px;
+  }
   
   .label{
     color: darkorange;
@@ -24,3 +29,72 @@
     font-weight: bolder;
     padding-right: 15px;
   }
+
+  
+  .text-container {
+    /*height: 200vh;*/
+    width: 10vw !important;
+    display: inline-block !important;
+    justify-content: left !important;
+    align-items: center;
+    }
+    
+    .text-container h1{
+    margin: 0;
+    font-size: 50px !important;
+    color: rgba(225,225,225, .01);
+    background-image: url("https://images.unsplash.com/photo-1499195333224-3ce974eecb47?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2cf549433129d4227d1879347b9e78ce&auto=format&fit=crop&w=1248&q=80");
+    background-repeat: repeat;
+    -webkit-background-clip:text;
+    animation: animate 15s ease-in-out infinite;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 62px !important;
+    }
+    
+    .button-one, .button-two, .button-three{
+      text-align: center;
+      cursor: pointer;
+      font-size:14px;
+      margin: 0 0 0 -20px;
+    }
+
+    /*Button Three*/
+.button-three {
+  background-color:  #62b25c;
+  border: none;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.button-three:hover{
+ background:#fff;
+ box-shadow:0px 2px 10px 5px #97B1BF;
+ color:#000;
+}
+
+.button-three:after {
+  content: "";
+  background: #f1c40f;
+  display: block;
+  position: absolute;
+  padding-top: 30%;
+  padding-left: 35%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button-three:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}

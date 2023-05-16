@@ -1,15 +1,19 @@
 
 <div class="container" >
     <div class="header">
-      <div><app-header [payload]="payload"/></div>
+      <div><app-header [payload]="payload" [url]="url" /></div>
+     
     </div>
   
     
     <div class="mainContent">
+      
       <router-outlet></router-outlet>
+      <app-portalselector/>
     </div>
-  
+   
     <div id="footer">
+      
       <app-footer />
     </div>
    

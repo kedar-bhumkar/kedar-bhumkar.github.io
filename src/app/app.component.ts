@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DCCService } from '../app/services/dcc.service';
+import { OktaAuthService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -7,17 +8,16 @@ import { DCCService } from '../app/services/dcc.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+
+  isAuthenticated: boolean = false; 
   title = 'BlueStar';
   payload: any;
-  constructor(private dccService: DCCService) {}
+  constructor(private dccService: DCCService, public oktaAuth: OktaAuthService) {}
 
   ngOnInit(): void {
-    //this.getLandingPageData();
+  
+    this.oktaAuth.$isAuthenticated.subscribe(val => this.isAuthenticated = val);
   }
 
-  getLandingPageData(): void {
-    this.dccService
-      .getLandingPageData()
-      .subscribe((payload) => (this.payload = payload));
-  }
+
 }

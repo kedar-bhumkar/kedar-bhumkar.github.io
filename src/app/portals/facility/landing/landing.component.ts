@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OktaAuthService } from 'src/app/app.service';
 import { DCCService } from '../../../../app/services/dcc.service';
 
 @Component({
@@ -8,15 +9,31 @@ import { DCCService } from '../../../../app/services/dcc.service';
 })
 export class LandingComponent {
   payload: any;
-  constructor(private dccService: DCCService) {}
+  token:any;
+
+  constructor(private dccService: DCCService,public oktaAuth: OktaAuthService) {}
 
   ngOnInit(): void {
-    this.getLandingPageData();
+    this.getToken();
   }
 
-  getLandingPageData(): void {
-    this.dccService
-      .getLandingPageData()
-      .subscribe((payload) => (this.payload = payload));
+  async getToken() {
+    this.token = await this.oktaAuth.getToken();
+    console.log(' this.token - ' + JSON.stringify( this.token));
+    console.log(' this.federationID - ' + this.token.federationId);
+    this.getLandingPageData(this.token.federationId);
+  }
+
+  getLandingPageData(id:any): void {
+    this.dccService.getLandingPageData(id,"FACILITY_MENU").subscribe((payload) => {
+      this.payload = payload;
+
+    });
+  }
+
+  isVisible(cmp:String):boolean {
+    //console.log('cmp = ' + cmp)
+    
+    return this.payload?.resource.length> 0 && this.payload.resource.find((res:any) =>res.name === cmp)
   }
 }
