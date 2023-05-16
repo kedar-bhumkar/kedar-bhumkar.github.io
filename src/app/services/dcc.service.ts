@@ -9,7 +9,7 @@ export class DCCService {
   private baseUrl = "https://springmongodb.onrender.com/";
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),
-  
+  };
   constructor(private http: HttpClient) {}
 
   getLandingPageData(id:any, cmpType:any): Observable<any> {
