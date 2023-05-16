@@ -13,8 +13,8 @@ export class OktaAuthService {
 
   CLIENT_ID = '0oa95ju89g8tFzckZ5d7';
   ISSUER = 'https://dev-73315710.okta.com/oauth2/aus95oxbnfpnNVnjI5d7'
-  LOGIN_REDIRECT_URI = 'http://localhost:4200/callback';
-  LOGOUT_REDIRECT_URI = 'http://localhost:4200/login';
+  LOGIN_REDIRECT_URI = 'https://springmongodb.onrender.com/callback';
+  LOGOUT_REDIRECT_URI = 'https://springmongodb.onrender.com/login';
 
   oktaAuth = new OktaAuth({
     clientId: this.CLIENT_ID,
