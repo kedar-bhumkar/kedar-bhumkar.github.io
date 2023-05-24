@@ -11,6 +11,7 @@ import { ProtectedComponent } from './common/protected/protected.component';
 
 const routes: Routes = [
   { path: 'login', component: RegistrationComponent },
+  //{ path: 'apps', component: AppselectorComponent,canActivate: [OktaAuthGuard], },
   { path: 'apps', component: AppselectorComponent,canActivate: [OktaAuthGuard], },
 
   {

@@ -6,7 +6,8 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
   providedIn: "root",
 })
 export class DCCService {
-  private baseUrl = "https://springmongodb.onrender.com/";
+  //private baseUrl = "https://springmongodb.onrender.com/";
+  private baseUrl =  "http://localhost:8080/";
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),
   };

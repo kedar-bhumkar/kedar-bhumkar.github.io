@@ -13,8 +13,11 @@ export class OktaAuthService {
 
   CLIENT_ID = '0oa95ju89g8tFzckZ5d7';
   ISSUER = 'https://dev-73315710.okta.com/oauth2/aus95oxbnfpnNVnjI5d7'
-  LOGIN_REDIRECT_URI = 'https://kedar-bhumkar.github.io/callback';
-  LOGOUT_REDIRECT_URI = 'https://kedar-bhumkar.github.io/login';
+  //LOGIN_REDIRECT_URI = 'https://kedar-bhumkar.github.io/callback';  
+  //LOGOUT_REDIRECT_URI = 'https://kedar-bhumkar.github.io/login';
+
+  LOGIN_REDIRECT_URI = 'http://localhost:4200/callback';  
+  LOGOUT_REDIRECT_URI = 'http://localhost:4200/login';
 
   oktaAuth = new OktaAuth({
     clientId: this.CLIENT_ID,

@@ -1,0 +1,6 @@
+{
+    "/": {
+      "target": "https://springmongodb.onrender.com/",
+      "secure": false
+    }
+  }

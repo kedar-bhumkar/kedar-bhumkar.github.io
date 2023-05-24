@@ -24,6 +24,7 @@ export class EducationDetailComponent {
 
   async getDocs(docType:String){
     this.dccService.getDocs(docType).subscribe((payload) => {
+      console.log('Inside subscribe  doc payload - ')
       console.log('Recvd doc payload - ' + JSON.stringify(payload))
       this.payload = payload;
       if(docType == 'facilitybinder'){

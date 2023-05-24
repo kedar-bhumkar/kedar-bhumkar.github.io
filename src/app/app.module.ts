@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 import { EducationComponent } from './portals/facility/education/education.component';
@@ -22,7 +22,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CallbackComponent } from './common/callback/callback.component';
 import { ProtectedComponent } from './common/protected/protected.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
-
+import { HttpRequestInterceptor } from './interceptors/httpcache.interceptor'
 
 @NgModule({
   declarations: [
@@ -61,7 +61,9 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
   exports: [
     //HeaderComponent
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

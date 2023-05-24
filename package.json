@@ -23,6 +23,7 @@
     "@okta/okta-auth-js": "^7.2.0",
     "angular-in-memory-web-api": "^0.15.0",
     "ngx-extended-pdf-viewer": "^17.0.0-alpha.6",
+    "route-parser": "^0.0.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
