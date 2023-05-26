@@ -28,7 +28,7 @@ export class HttpRequestInterceptor implements HttpRequestInterceptor {
 	 * @returns {Observable<HttpEvent<any>>}
 	 */
 	intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log('Request intercepted - ' + JSON.stringify(request))
+        console.log('Inside  cache interceptor - ' + JSON.stringify(request))
 		let cachedResponse: HttpResponse<any>;
 		if (request.method === 'GET') {
 			cachedResponse = this._cache.get(request);

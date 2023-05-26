@@ -23,6 +23,8 @@ import { CallbackComponent } from './common/callback/callback.component';
 import { ProtectedComponent } from './common/protected/protected.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { HttpRequestInterceptor } from './interceptors/httpcache.interceptor'
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -62,6 +64,7 @@ import { HttpRequestInterceptor } from './interceptors/httpcache.interceptor'
     //HeaderComponent
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

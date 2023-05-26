@@ -4,5 +4,5 @@
 <button *ngIf="!isAuthenticated" (click)="oktaAuth.login('/')"> Login </button>
 <button *ngIf="isAuthenticated" (click)="oktaAuth.logout()"> Logout </button>
 <button routerLink="/protected"> Protected </button-->
-
+    <app-spinner></app-spinner>
 <router-outlet></router-outlet>
