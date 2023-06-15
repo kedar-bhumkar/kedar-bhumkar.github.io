@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http';
 import {HttpCacheService} from '../services/cache.service';
 import {Observable, of} from 'rxjs';
-import {catchError, finalize, tap} from 'rxjs/operators';
+import {catchError, finalize, tap, retry} from 'rxjs/operators';
 
 /**
  * Intercept all http requests
@@ -52,6 +52,7 @@ export class HttpRequestInterceptor implements HttpRequestInterceptor {
 		});
 		return next.handle(reqCopy)
 			.pipe(
+				retry(2),
 				tap<HttpEvent<any>>((httpEvent: HttpEvent<any>) => {
 					console.log('httpEvent instanceof HttpResponse  -  ' + (httpEvent instanceof HttpResponse))
 					if (httpEvent instanceof HttpResponse) {
@@ -65,6 +66,7 @@ export class HttpRequestInterceptor implements HttpRequestInterceptor {
 					return cachedResponse ? cachedResponse : httpEvent;
 				}),
 				catchError((err: HttpErrorResponse) => {
+					console.log('err - ', err)
 					throw err;
 				}),
 				finalize(() => {

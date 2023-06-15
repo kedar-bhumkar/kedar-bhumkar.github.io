@@ -11,13 +11,13 @@
 
 
 <!-- @ToDo  Fix content does not wrap -->
-<div id="header-contents" *ngIf="payload?.name">
+<div id="header-contents" *ngIf="payload?.userInfo?.firstname">
   
 
   <span class="label">Name</span
-  ><span class="value">{{ payload.name }}</span>
+  ><span class="value">{{ payload.userInfo.firstname }} {{ payload.userInfo.lastname }}</span>
   <span class="label">Role</span
-  ><span class="value">{{payload.roles[0].roleId}}</span>
+  ><span class="value">{{payload.roles[0].role}}</span>
   <span class="label">Facility</span
   ><span class="value">{{payload.roles[0].facilityName}}</span>
   <span>

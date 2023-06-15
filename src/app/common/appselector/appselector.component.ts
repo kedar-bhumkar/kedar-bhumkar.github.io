@@ -39,9 +39,10 @@ export class AppselectorComponent {
 
   getLandingPageData(id:any): void {
     this.dccService.getLandingPageData(id, 'APP').subscribe((payload) => {
-      console.log('getLandingPageData data ' + JSON.stringify(payload));
+      console.log('getLandingPageData data ....' + JSON.stringify(payload));
       //this.payload2 = payload;
       this.payload = payload;
+      console.log('payload.userInfo.firstname ....' + payload.userInfo.firstname);
       //this.url = '/assets/Facilityportal-2.png';
     });
   }
@@ -49,6 +50,9 @@ export class AppselectorComponent {
   isVisible(cmp:String):boolean {
     //console.log('cmp = ' + cmp)
     
-    return this.payload?.resource.length> 0 && this.payload.resource.find((res:any) =>res.name === cmp)
+    return this.payload?.resource.length> 0 && this.payload.resource.find((res:any) =>{
+    
+      return res.resource.name === cmp
+    })
   }
 }

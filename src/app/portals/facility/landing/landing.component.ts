@@ -34,6 +34,6 @@ export class LandingComponent {
   isVisible(cmp:String):boolean {
     //console.log('cmp = ' + cmp)
     
-    return this.payload?.resource.length> 0 && this.payload.resource.find((res:any) =>res.name === cmp)
+    return this.payload?.resource.length> 0 && this.payload.resource.find((res:any) =>res.resource.name === cmp)
   }
 }

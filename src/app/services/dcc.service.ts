@@ -38,7 +38,7 @@ export class DCCService {
     //@todo optimize to avoid repeated ws calls on multiple invocations
     //https://blog.danieleghidoli.it/2020/10/28/angular-how-to-prevent-duplicated-http-requests/
 
-    return this.http.get<any>(this.baseUrl + "docs/" + docType);
+    return this.http.get<any>(this.baseUrl + "docs?name=" + docType);
   }
 
 }

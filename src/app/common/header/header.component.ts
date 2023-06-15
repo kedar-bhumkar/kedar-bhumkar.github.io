@@ -21,7 +21,7 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     this.oktaAuth.$isAuthenticated.subscribe(val => this.isAuthenticated = val);
-    console.log("this.payload - " + this.payload)
+    console.log("this.payload .... - " + this.payload)
   }
 
 

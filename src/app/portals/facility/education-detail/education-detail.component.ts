@@ -28,7 +28,8 @@ export class EducationDetailComponent {
       console.log('Recvd doc payload - ' + JSON.stringify(payload))
       this.payload = payload;
       if(docType == 'facilitybinder'){
-        this.pdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(payload.metadata[0].docType);
+        console.log("payload.metadata[0].docUrl - " + payload[0].metadata[0].docUrl)
+        this.pdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(payload[0].metadata[0].docUrl);
       }
  
     });
